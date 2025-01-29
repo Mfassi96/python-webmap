@@ -10,7 +10,7 @@
 
 3. Crear objeto
 
-map=folium.Map([l,l])
+map=folium.Map([lat,lon])
 
 4. guardar el mapa
 
