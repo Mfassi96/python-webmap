@@ -1,4 +1,4 @@
-# Python, HTML, CSS, JS
+# Python, HTML, CSS, JS WebMap
 
 1. Instalar biblioteca folium
 

@@ -1,4 +1,8 @@
-import folium
+import folium, pandas
+datos=pandas.read_csv("Volcanoes.csv")
+recorte=datos.loc[:,["LAT","LON"]]
+lista_lat=list(recorte['LAT'])
+lista_lon=list(recorte['LON'])
 
 # Crear el mapa con una ubicación válida (latitud y longitud) y atribución para el tile
 map1 = folium.Map(
@@ -8,7 +12,8 @@ map1 = folium.Map(
 fg=folium.FeatureGroup("mymap")
 
 # Agregar un marcador
-fg.add_child(folium.Marker(location=[38.2, -99.1], popup="Nuevo marcador", icon=folium.Icon(color="red")))
+for lt, ln in zip(lista_lat, lista_lon):
+    fg.add_child(folium.Marker(location=[lt, ln], popup="Nuevo marcador", icon=folium.Icon(color="red")))
 
 map1.add_child(fg)
 # Guardar el mapa en un archivo HTML
