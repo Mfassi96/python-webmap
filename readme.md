@@ -16,4 +16,8 @@ map=folium.Map([lat,lon])
 
 map.save(map1.html)
 
+5. Agregar marcadores, mediante un featuregroup
+
+fg=folium.FeatureGroup("mymap")
+
 ![Mapa de volcanes](mapa.png)
