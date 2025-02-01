@@ -34,7 +34,15 @@ for lt,ln,nm,st,el in zip(lista_lat, lista_lon,lista_names, lista_status, lista_
                                      fill=True,
                                      fill_opacity=0.7))
         
-fg.add_child(folium.GeoJson(data=open('world.json','r',encoding='UTF-8-sig').read()))
+fg.add_child(folium.GeoJson(data=open('world.json','r',encoding='UTF-8-sig').read(),
+    style_function=lambda x: {
+        'fillColor': 'green' if x['properties']['POP2005'] < 10000000 
+                     else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 
+                     else 'red',
+        'color': 'black',
+        'weight': 2,
+        'fillOpacity': 0.5
+    }))
 
 map1.add_child(fg)
 # Guardar el mapa en un archivo HTML
