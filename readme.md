@@ -16,3 +16,4 @@ map=folium.Map([lat,lon])
 
 map.save(map1.html)
 
+![Mapa de volcanes](mapa.png)
