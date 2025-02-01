@@ -33,6 +33,8 @@ for lt,ln,nm,st,el in zip(lista_lat, lista_lon,lista_names, lista_status, lista_
                                      fill_color=get_elev(el),
                                      fill=True,
                                      fill_opacity=0.7))
+        
+fg.add_child(folium.GeoJson(data=open('world.json','r',encoding='UTF-8-sig').read()))
 
 map1.add_child(fg)
 # Guardar el mapa en un archivo HTML
